@@ -1,0 +1,185 @@
+/* Practicum 8 - Responsive Banking Services Website */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    line-height: 1.6;
+}
+
+/* Header */
+
+header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Navigation */
+
+nav {
+    background-color: #00509e;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main */
+
+main {
+    padding: 20px;
+}
+
+/* Sections */
+
+section {
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+/* Cards */
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #dbeafe;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+
+th,
+td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+}
+
+/* Form */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    background-color: #00509e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* =========================
+   TABLET VIEW
+   Max Width: 768px
+   ========================= */
+
+@media screen and (max-width: 768px) {
+
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .card {
+        min-width: 45%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+}
+
+/* =========================
+   MOBILE VIEW
+   Max Width: 480px
+   ========================= */
+
+@media screen and (max-width: 480px) {
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 12px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    main {
+        padding: 10px;
+    }
+}

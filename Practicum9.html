@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon Bank | Interactive Banking</title>
+  <link rel="stylesheet" href="Practicum9.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark">H</span> Horizon Bank</div>
+    <nav aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#offers">Offers</a>
+      <a href="#help">Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">BANKING MADE SIMPLE</p>
+        <h1>Your goals.<br><span>Our support.</span></h1>
+        <p>Explore everyday banking, flexible loans and secure digital services—all in one place.</p>
+        <button class="primary-btn" id="welcomeBtn" type="button">Explore banking <span>→</span></button>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a bank card and savings" role="img">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="bank-card">
+          <div class="card-top"><span>HORIZON</span><span>✦</span></div>
+          <div class="chip"></div>
+          <div class="card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 2048</div>
+          <div class="card-bottom"><span>YOUR NAME</span><span>VISA</span></div>
+        </div>
+        <div class="coin coin-one">₹</div><div class="coin coin-two">+</div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">BANKING SERVICES</p>
+        <h2>Choose what you need</h2>
+        <p>Tap a service card to reveal more information.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-icon">▤</div><h3>Savings Account</h3>
+          <p>Build your savings with convenient access to your money.</p>
+          <button class="text-btn details-btn" aria-expanded="false" type="button">View details <span>＋</span></button>
+          <div class="extra-info"><p>Features include account statements, debit-card access and digital account monitoring.</p></div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">⌂</div><h3>Home Loans</h3>
+          <p>Explore financing options for your home ownership plans.</p>
+          <button class="text-btn details-btn" aria-expanded="false" type="button">View details <span>＋</span></button>
+          <div class="extra-info"><p>Review available repayment periods, eligibility requirements and documentation with a bank representative.</p></div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">▣</div><h3>Digital Banking</h3>
+          <p>Manage everyday banking through online and mobile services.</p>
+          <button class="text-btn details-btn" aria-expanded="false" type="button">View details <span>＋</span></button>
+          <div class="extra-info"><p>Check balances, view transactions and make eligible transfers using secure digital access.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="promo-section" id="offers">
+      <div><p class="eyebrow">A BETTER BANKING EXPERIENCE</p><h2>Small steps.<br>Big possibilities.</h2><p>Stay informed and take control of your financial journey.</p></div>
+      <button class="light-btn" id="offerBtn" type="button">Show today's message</button>
+    </section>
+
+    <section class="section help-section" id="help">
+      <div class="section-heading">
+        <p class="eyebrow">NEED ASSISTANCE?</p><h2>We're here to help</h2>
+        <p>Use the button to open or close the quick-help panel.</p>
+      </div>
+      <button class="primary-btn" id="helpToggle" aria-expanded="false" type="button">Open quick help <span>＋</span></button>
+      <div class="help-panel" id="helpPanel">
+        <h3>Quick help</h3>
+        <p>For account-specific assistance, contact your bank using the verified phone number or website printed on your official banking documents.</p>
+        <p><strong>Safety tip:</strong> Never share your PIN, password or one-time password with anyone.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><span>✓</span><span id="toastText">Welcome to Horizon Bank!</span></div>
+
+  <footer><p>© 2026 Horizon Bank. Sample educational webpage only.</p></footer>
+  <script src="Practicum9.js"></script>
+</body>
+</html>

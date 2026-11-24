@@ -1,0 +1,147 @@
+/* Practicum 6 - CSS Positioning */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f9;
+    line-height: 1.6;
+}
+
+/* Header */
+
+header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Sticky Position */
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: #00509e;
+    padding: 15px;
+    text-align: center;
+    z-index: 100;
+}
+
+.sticky-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+/* Main Content */
+
+main {
+    padding: 20px;
+}
+
+/* Static Position */
+
+.static-box {
+    position: static;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid green;
+}
+
+/* Relative Position */
+
+.relative-box {
+    position: relative;
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 5px solid orange;
+}
+
+/* Absolute Position */
+
+.absolute-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background-color: red;
+    color: white;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* General Sections */
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #999;
+    padding: 10px;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+}
+
+/* Form */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    background-color: #00509e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Fixed Position */
+
+.fixed-help {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background-color: #28a745;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+
+    z-index: 999;
+}
+
+/* Footer */
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}

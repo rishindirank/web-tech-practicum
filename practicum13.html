@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banking Services & Task Manager</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+header{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+section{
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#003366;
+    margin-bottom:15px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin:8px 0;
+}
+
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.card{
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.card:hover{
+    background:#e6f2ff;
+    transform:translateY(-5px);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+table,th,td{
+    border:1px solid #ccc;
+}
+
+th{
+    background:#003366;
+    color:white;
+}
+
+th,td{
+    padding:10px;
+    text-align:center;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+input,select,textarea{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    background:#003366;
+    color:white;
+    padding:10px;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0055aa;
+}
+
+/* Task Manager */
+
+.task-form{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.task-form input,
+.task-form select{
+    flex:1;
+}
+
+.task{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px;
+    border:1px solid #ddd;
+    margin-top:10px;
+    border-radius:8px;
+}
+
+.task-actions{
+    display:flex;
+    gap:5px;
+}
+
+.completed{
+    background:#d4edda;
+}
+
+.pending{
+    background:#fff3cd;
+}
+
+footer{
+    text-align:center;
+    padding:15px;
+    background:#003366;
+    color:white;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>ABC Banking Services</h1>
+<p>Financial Solutions for Everyone</p>
+</header>
+
+<!-- Account Types -->
+<section>
+<h2>Account Types</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>Savings Account</h3>
+<p>Earn interest and enjoy secure banking services.</p>
+</div>
+
+<div class="card">
+<h3>Current Account</h3>
+<p>Ideal for professionals and businesses.</p>
+</div>
+
+<div class="card">
+<h3>Fixed Deposit</h3>
+<p>Higher returns with fixed tenure investments.</p>
+</div>
+
+</div>
+</section>
+
+<!-- Loans -->
+<section>
+<h2>Loan Services</h2>
+
+<ul>
+<li>Home Loan</li>
+<li>Vehicle Loan</li>
+<li>Education Loan</li>
+<li>Personal Loan</li>
+</ul>
+
+</section>
+
+<!-- Digital Banking -->
+<section>
+<h2>Digital Banking Services</h2>
+
+<ul>
+<li>Internet Banking</li>
+<li>Mobile Banking</li>
+<li>UPI Payments</li>
+<li>Online Fund Transfer</li>
+<li>Bill Payments</li>
+</ul>
+
+</section>
+
+<!-- Benefits -->
+<section>
+<h2>Benefits</h2>
+
+<ul>
+<li>24/7 Banking Access</li>
+<li>Safe & Secure Transactions</li>
+<li>Quick Loan Approval</li>
+<li>Attractive Interest Rates</li>
+</ul>
+
+</section>
+
+<!-- Comparison Table -->
+<section>
+
+<h2>Account Comparison</h2>
+
+<table>
+
+<tr>
+<th>Feature</th>
+<th>Savings</th>
+<th>Current</th>
+<th>Fixed Deposit</th>
+</tr>
+
+<tr>
+<td>Minimum Balance</td>
+<td>₹1000</td>
+<td>₹5000</td>
+<td>No Requirement</td>
+</tr>
+
+<tr>
+<td>Interest</td>
+<td>4%</td>
+<td>0%</td>
+<td>7%</td>
+</tr>
+
+<tr>
+<td>ATM Facility</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+
+</table>
+
+</section>
+
+<!-- Enquiry Form -->
+<section>
+
+<h2>Customer Enquiry Form</h2>
+
+<form>
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<select>
+<option>Select Service</option>
+<option>Savings Account</option>
+<option>Current Account</option>
+<option>Loan</option>
+<option>Fixed Deposit</option>
+</select>
+
+<textarea rows="4" placeholder="Enter Your Query"></textarea>
+
+<button type="submit">Submit Enquiry</button>
+
+</form>
+
+</section>
+
+<!-- Task Manager -->
+<section>
+
+<h2>Banking Service Task Manager</h2>
+
+<div class="task-form">
+
+<input type="text" id="taskTitle" placeholder="Task Name">
+
+<select id="taskStatus">
+<option value="Pending">Pending</option>
+<option value="Completed">Completed</option>
+</select>
+
+<button onclick="addTask()">Add Task</button>
+
+</div>
+
+<div id="taskList"></div>
+
+</section>
+
+<footer>
+<p>© 2026 ABC Banking Services</p>
+</footer>
+
+<script>
+
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+function saveTasks(){
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function displayTasks(){
+
+    let taskList=document.getElementById("taskList");
+    taskList.innerHTML="";
+
+    tasks.forEach(task=>{
+
+        let taskDiv=document.createElement("div");
+
+        taskDiv.classList.add("task");
+
+        if(task.status==="Completed"){
+            taskDiv.classList.add("completed");
+        }
+        else{
+            taskDiv.classList.add("pending");
+        }
+
+        taskDiv.innerHTML=`
+        <div>
+            <h4>${task.title}</h4>
+            <p>Status : ${task.status}</p>
+        </div>
+        `;
+
+        let actions=document.createElement("div");
+        actions.classList.add("task-actions");
+
+        let editBtn=document.createElement("button");
+        editBtn.textContent="Edit";
+
+        editBtn.addEventListener("click",()=>{
+
+            let updatedTitle=prompt("Update Task",task.title);
+
+            if(updatedTitle){
+
+                let foundTask=tasks.find(
+                    t=>t.id===task.id
+                );
+
+                foundTask.title=updatedTitle;
+
+                saveTasks();
+                displayTasks();
+            }
+        });
+
+        let statusBtn=document.createElement("button");
+        statusBtn.textContent="Toggle Status";
+
+        statusBtn.addEventListener("click",()=>{
+
+            let foundTask=tasks.find(
+                t=>t.id===task.id
+            );
+
+            foundTask.status=
+                foundTask.status==="Pending"
+                ?"Completed"
+                :"Pending";
+
+            saveTasks();
+            displayTasks();
+        });
+
+        let deleteBtn=document.createElement("button");
+        deleteBtn.textContent="Delete";
+
+        deleteBtn.addEventListener("click",()=>{
+
+            tasks=tasks.filter(
+                t=>t.id!==task.id
+            );
+
+            saveTasks();
+            displayTasks();
+        });
+
+        actions.appendChild(editBtn);
+        actions.appendChild(statusBtn);
+        actions.appendChild(deleteBtn);
+
+        taskDiv.appendChild(actions);
+
+        taskList.appendChild(taskDiv);
+
+    });
+}
+
+function addTask(){
+
+    let title=document.getElementById("taskTitle").value;
+    let status=document.getElementById("taskStatus").value;
+
+    if(title===""){
+        alert("Enter Task Name");
+        return;
+    }
+
+    tasks.push({
+        id:Date.now(),
+        title:title,
+        status:status
+    });
+
+    saveTasks();
+    displayTasks();
+
+    document.getElementById("taskTitle").value="";
+}
+
+displayTasks();
+
+</script>
+
+</body>
+</html>

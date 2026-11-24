@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Banking Services</title>
+    <link rel="stylesheet" href="practicum12.css">
+</head>
+<body>
+
+    <header>
+        <h1>ABC Banking Services</h1>
+        <p>Structured Banking Service Information Portal</p>
+    </header>
+
+    <section class="services">
+
+        <h2>Banking Services</h2>
+
+        <div class="service-grid">
+
+            <div class="card">
+                <h3>Account Types</h3>
+                <p>Savings, Current, Fixed Deposit</p>
+            </div>
+
+            <div class="card">
+                <h3>Loan Services</h3>
+                <p>Home, Personal, Education Loans</p>
+            </div>
+
+            <div class="card">
+                <h3>Digital Banking</h3>
+                <p>Mobile Banking, UPI, Net Banking</p>
+            </div>
+
+            <div class="card">
+                <h3>Benefits</h3>
+                <p>24/7 Banking, Secure Payments</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>Service Representatives (API Data)</h2>
+
+        <button id="loadBtn">
+            Load Representative Details
+        </button>
+
+        <p id="loading"></p>
+
+        <div class="table-container">
+
+            <table id="dataTable">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</body>
+
+<script src="script.js"></script>
+</html>

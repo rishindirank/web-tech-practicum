@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Banking Services</title>
+    <link rel="stylesheet" href="practicum 10.css">
+</head>
+<body>
+
+    <header>
+        <h1>ABC Banking Services</h1>
+        <p>Your Trusted Banking Partner</p>
+    </header>
+
+    <section class="form-section">
+
+        <h2>Add New Banking Service</h2>
+
+        <input
+            type="text"
+            id="serviceInput"
+            placeholder="Enter Banking Service">
+
+        <button id="addBtn">
+            Add Service
+        </button>
+
+        <button id="modifyBtn">
+            Modify First Service
+        </button>
+
+        <button id="clearBtn">
+            Remove All Services
+        </button>
+
+        <span id="message"></span>
+
+    </section>
+
+    <section>
+
+        <h2>Banking Services</h2>
+
+        <div id="serviceContainer" class="service-grid">
+
+            <div class="service-card">
+                <p>Savings Account</p>
+                <button onclick="removeService(this)">
+                    Remove
+                </button>
+            </div>
+
+            <div class="service-card">
+                <p>Home Loan</p>
+                <button onclick="removeService(this)">
+                    Remove
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>Account Benefits</h2>
+
+        <ul id="benefitList">
+            <li>24/7 Online Banking</li>
+            <li>Secure Transactions</li>
+            <li>Fast Fund Transfers</li>
+        </ul>
+
+    </section>
+
+    <script src="practicum10.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Services</title>
+    <link rel="stylesheet" href="practicum14.css">
+</head>
+<body>
+
+<header>
+    <h1>ABC Banking Services</h1>
+    <p>Explore Banking Products & Services</p>
+</header>
+
+<section>
+
+<h2>Banking Service Search & Filter</h2>
+
+<div class="controls">
+    <input type="text" id="searchBox" placeholder="Search Services">
+
+    <select id="categoryFilter">
+        <option value="All">All Services</option>
+        <option value="Account">Account</option>
+        <option value="Loan">Loan</option>
+        <option value="Digital">Digital</option>
+    </select>
+</div>
+
+<div class="card-container">
+
+    <div class="card" data-category="Account">
+        <img src="OIP (1).webp" alt="Savings Account">
+        <h3>Savings Account</h3>
+        <p>Earn interest with secure banking.</p>
+
+        <details>
+            <summary>More Details</summary>
+            <p>Low minimum balance and ATM facility.</p>
+        </details>
+    </div>
+
+    <div class="card" data-category="Account">
+        <img src="Current Account.webp" alt="Current Account">
+        <h3>Current Account</h3>
+        <p>Business banking solutions.</p>
+
+        <details>
+            <summary>More Details</summary>
+            <p>Unlimited transactions for business users.</p>
+        </details>
+    </div>
+
+    <div class="card" data-category="Loan">
+        <img src="home.webp" alt="Home Loan">
+        <h3>Home Loan</h3>
+        <p>Affordable interest rates.</p>
+
+        <details>
+            <summary>More Details</summary>
+            <p>Flexible repayment options available.</p>
+        </details>
+    </div>
+
+    <div class="card" data-category="Loan">
+        <img src="edu.webp" alt="Education Loan">
+        <h3>Education Loan</h3>
+        <p>Support for higher education.</p>
+
+        <details>
+            <summary>More Details</summary>
+            <p>Easy approval process for students.</p>
+        </details>
+    </div>
+
+    <div class="card" data-category="Digital">
+        <img src="mobile.avif" alt="Mobile Banking">
+        <h3>Mobile Banking</h3>
+        <p>24/7 account access.</p>
+
+        <details>
+            <summary>More Details</summary>
+            <p>Transfer funds and pay bills instantly.</p>
+        </details>
+    </div>
+
+    <div class="card" data-category="Digital">
+        <img src="internet-banking-poster-FXAMBN.jpg" alt="Internet Banking">
+        <h3>Internet Banking</h3>
+        <p>Bank anywhere securely.</p>
+
+        <details>
+            <summary>More Details</summary>
+            <p>Online account management and payments.</p>
+        </details>
+    </div>
+
+</div>
+
+</section>
+
+<script>
+const searchBox = document.querySelector("#searchBox");
+const categoryFilter = document.querySelector("#categoryFilter");
+const cards = document.querySelectorAll(".card");
+
+function filterServices() {
+
+    const searchText = searchBox.value.toLowerCase();
+    const category = categoryFilter.value;
+
+    cards.forEach(card => {
+
+        const title =
+            card.querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+        const cardCategory =
+            card.dataset.category;
+
+        const nameMatch =
+            title.includes(searchText);
+
+        const categoryMatch =
+            category === "All" ||
+            cardCategory === category;
+
+        if(nameMatch && categoryMatch){
+            card.classList.remove("hidden");
+        }
+        else{
+            card.classList.add("hidden");
+        }
+    });
+}
+
+searchBox.addEventListener("keyup", filterServices);
+categoryFilter.addEventListener("change", filterServices);
+</script>
+
+</body>
+</html>

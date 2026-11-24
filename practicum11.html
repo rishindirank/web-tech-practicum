@@ -1,0 +1,1403 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meridian Trust Bank — Financial Services &amp; Registration (Practicum 11)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy-900: #0a192f;
+      --navy-800: #112240;
+      --navy-700: #1d3557;
+      --teal-600: #0d9488;
+      --teal-700: #0f766e;
+      --teal-50: #f0fdfa;
+      --slate-900: #0f172a;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
+      --error-red: #dc2626;
+      --error-bg: #fef2f2;
+      --success-green: #15803d;
+      --success-bg: #f0fdf4;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 16px 40px rgba(10, 25, 47, 0.12);
+      --radius-md: 12px;
+      --radius-lg: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--slate-900);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--navy-900);
+      font-weight: 800;
+      font-size: 1.15rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--navy-900), var(--teal-600));
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--slate-600);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal-600);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal-600), var(--teal-700));
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--slate-700);
+      border: 1px solid var(--slate-200);
+    }
+
+    .btn-secondary:hover {
+      background: var(--slate-100);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 60%, #134e4a 100%);
+      color: var(--white);
+      padding: 72px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(13, 148, 136, 0.2);
+      border: 1px solid rgba(45, 212, 191, 0.35);
+      color: #5eead4;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      margin-bottom: 18px;
+      color: var(--white);
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 1.08rem;
+      max-width: 580px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .stat-value {
+      display: block;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #5eead4;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    /* Sections */
+    section {
+      padding: 72px 0;
+    }
+
+    section.alt-bg {
+      background: var(--white);
+      border-top: 1px solid var(--slate-200);
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 40px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      color: var(--teal-600);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      color: var(--navy-900);
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: var(--slate-600);
+      font-size: 1.02rem;
+    }
+
+    /* Card Grids */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card.featured {
+      border: 2px solid var(--teal-600);
+      position: relative;
+    }
+
+    .featured-tag {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--teal-600);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--teal-50);
+      color: var(--teal-700);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.22rem;
+      color: var(--navy-900);
+      margin-bottom: 8px;
+    }
+
+    .rate-highlight {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--teal-700);
+      margin: 8px 0 12px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .rate-highlight span {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--slate-500);
+    }
+
+    .card p {
+      color: var(--slate-600);
+      font-size: 0.94rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--slate-100);
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 0.9rem;
+      color: var(--slate-700);
+      margin-bottom: 8px;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--teal-600);
+      font-weight: 700;
+    }
+
+    /* Digital Services & Benefits */
+    .service-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px;
+      background: var(--bg-light);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+    }
+
+    .service-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .service-row h4 {
+      font-size: 1.05rem;
+      color: var(--navy-900);
+      margin-bottom: 4px;
+    }
+
+    .service-row p {
+      font-size: 0.92rem;
+      color: var(--slate-600);
+    }
+
+    /* Comparison Table */
+    .table-wrapper {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      text-align: left;
+    }
+
+    thead {
+      background: var(--navy-900);
+      color: var(--white);
+    }
+
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--slate-200);
+      font-size: 0.94rem;
+    }
+
+    th {
+      font-weight: 600;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: var(--bg-light);
+    }
+
+    td:first-child {
+      font-weight: 600;
+      color: var(--navy-900);
+    }
+
+    .pill-yes {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--success-bg);
+      color: var(--success-green);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    /* Registration / Enquiry Form */
+    .form-container {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    fieldset {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 24px;
+      background: #fcfdff;
+    }
+
+    legend {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--navy-900);
+      padding: 0 10px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--slate-700);
+      margin-bottom: 6px;
+    }
+
+    .req-star {
+      color: var(--error-red);
+      margin-left: 2px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--slate-900);
+      background-color: var(--white);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    /* Required CSS pseudo-classes: :focus, :valid, :invalid */
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border: 1.5px solid var(--teal-600);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.16);
+    }
+
+    .form-touched input:valid,
+    .form-touched select:valid,
+    .form-touched textarea:valid,
+    input.touched:valid,
+    select.touched:valid,
+    textarea.touched:valid {
+      border: 1.5px solid var(--success-green);
+    }
+
+    .form-touched input:invalid,
+    .form-touched select:invalid,
+    .form-touched textarea:invalid,
+    input.touched:invalid,
+    select.touched:invalid,
+    textarea.touched:invalid {
+      border: 1.5px solid var(--error-red);
+      background-color: #fffafa;
+    }
+
+    .field-hint {
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      margin-top: 5px;
+    }
+
+    .error-message {
+      display: none;
+      color: var(--error-red);
+      font-size: 0.83rem;
+      font-weight: 500;
+      margin-top: 6px;
+    }
+
+    .error-message.visible {
+      display: block;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-weight: 500;
+      font-size: 0.92rem;
+      color: var(--slate-700);
+      cursor: pointer;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--teal-600);
+      cursor: pointer;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    /* Status Banners */
+    .status-banner {
+      display: none;
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      font-size: 0.94rem;
+    }
+
+    .status-banner.error-banner {
+      background: var(--error-bg);
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+
+    .status-banner.success-banner {
+      background: var(--success-bg);
+      border: 1px solid #bbf7d0;
+      color: #166534;
+    }
+
+    .status-banner.visible {
+      display: block;
+    }
+
+    .status-banner h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .summary-details {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(22, 101, 52, 0.2);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 8px;
+      font-size: 0.88rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy-900);
+      color: #94a3b8;
+      padding: 40px 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-inner strong {
+      color: var(--white);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-container {
+        padding: 20px;
+      }
+
+      fieldset {
+        padding: 16px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-bar">
+      <a href="#" class="brand">
+        <span class="brand-mark">M</span>
+        <span>Meridian Trust Bank</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="#accounts">Accounts</a></li>
+          <li><a href="#loans">Loans</a></li>
+          <li><a href="#digital">Digital &amp; Benefits</a></li>
+          <li><a href="#compare">Compare</a></li>
+          <li><a href="#enquiry">Register</a></li>
+        </ul>
+      </nav>
+      <a href="#enquiry" class="btn btn-primary">Open Account</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Practicum 11 • Banking Services Portal</span>
+        <h1>Modern Financial Services Built Around Your Goals</h1>
+        <p>
+          Discover transparent checking and high-yield savings accounts, flexible lending solutions,
+          and award-winning digital banking backed by enterprise-grade security.
+        </p>
+        <div class="hero-actions">
+          <a href="#enquiry" class="btn btn-primary">Apply or Enquire Now</a>
+          <a href="#compare" class="btn btn-outline">Compare Accounts</a>
+        </div>
+      </div>
+      <div class="hero-stats" aria-label="Key banking highlights">
+        <div class="stat-card">
+          <span class="stat-value">4.75% APY</span>
+          <span class="stat-label">High-Yield Savings Rate</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">$250,000</span>
+          <span class="stat-label">FDIC Deposit Protection</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">$0</span>
+          <span class="stat-label">Monthly Maintenance Fees</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">24 / 7</span>
+          <span class="stat-label">Live Advisor &amp; Fraud Guard</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Account Types -->
+  <section id="accounts">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Account Types</span>
+        <h2>Tailored Deposit Accounts for Every Stage</h2>
+        <p>Choose an account designed for everyday spending, accelerated saving, or comprehensive wealth management.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">💳</div>
+          <h3>Everyday Checking</h3>
+          <div class="rate-highlight">0.50% APY <span>on balances</span></div>
+          <p>Streamlined daily banking with early direct deposit and zero hidden maintenance fees.</p>
+          <ul class="feature-list">
+            <li>$100 minimum opening deposit</li>
+            <li>No monthly service fees</li>
+            <li>Free contactless debit card</li>
+            <li>55,000+ fee-free ATMs nationwide</li>
+          </ul>
+        </article>
+
+        <article class="card featured">
+          <span class="featured-tag">Most Popular</span>
+          <div class="card-icon" aria-hidden="true">📈</div>
+          <h3>High-Yield Savings</h3>
+          <div class="rate-highlight">4.75% APY <span>compounded daily</span></div>
+          <p>Grow your emergency fund or long-term savings faster with competitive market rates.</p>
+          <ul class="feature-list">
+            <li>$250 minimum opening deposit</li>
+            <li>Automated round-up savings rules</li>
+            <li>Custom savings goal buckets</li>
+            <li>Instant transfers to Meridian Checking</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🏛️</div>
+          <h3>Premier Wealth Account</h3>
+          <div class="rate-highlight">5.10% APY <span>tiered relationship rate</span></div>
+          <p>Priority financial advisory, global fee waivers, and preferred lending rates for high-balance members.</p>
+          <ul class="feature-list">
+            <li>$25,000 minimum opening deposit</li>
+            <li>Dedicated personal relationship manager</li>
+            <li>Unlimited worldwide ATM fee rebates</li>
+            <li>Zero foreign transaction &amp; wire fees</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loans & Financing -->
+  <section id="loans" class="alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Lending Solutions</span>
+        <h2>Flexible Loans with Clear, Competitive Terms</h2>
+        <p>Fast pre-qualification with no prepayment penalties and fixed monthly repayment schedules.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🏠</div>
+          <h3>Home Mortgages</h3>
+          <div class="rate-highlight">6.15% APR <span>starting fixed</span></div>
+          <p>Fixed-rate and adjustable mortgages for first-time buyers, refinancing, or investment properties.</p>
+          <ul class="feature-list">
+            <li>Loan amounts from $50,000 to $2,000,000</li>
+            <li>15-year and 30-year fixed terms</li>
+            <li>Rate-lock protection for 60 days</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🚗</div>
+          <h3>Auto Financing</h3>
+          <div class="rate-highlight">5.49% APR <span>new &amp; certified used</span></div>
+          <p>Same-day financing approval for dealership or private-party vehicle purchases and EVs.</p>
+          <ul class="feature-list">
+            <li>Flexible 36 to 72-month terms</li>
+            <li>0.25% APR discount with AutoPay</li>
+            <li>Special green-vehicle rate incentives</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">💼</div>
+          <h3>Personal &amp; Small Business</h3>
+          <div class="rate-highlight">7.99% APR <span>unsecured fixed</span></div>
+          <p>Consolidate high-interest debt, renovate your home, or fund working capital without collateral.</p>
+          <ul class="feature-list">
+            <li>Borrow $2,000 to $100,000</li>
+            <li>Zero origination or early-payoff fees</li>
+            <li>Funds disbursed within 1 business day</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Services & Member Benefits -->
+  <section id="digital">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Digital Banking &amp; Member Benefits</span>
+        <h2>Bank Effortlessly Anywhere, Protected Around the Clock</h2>
+        <p>Every Meridian account includes modern digital tools and exclusive member advantages.</p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3 style="margin-bottom: 16px; color: var(--navy-900);">Digital Services</h3>
+          <div class="service-row">
+            <div class="card-icon" style="margin-bottom: 0; flex-shrink: 0;" aria-hidden="true">📱</div>
+            <div>
+              <h4>All-in-One Mobile Banking</h4>
+              <p>Deposit checks remotely, freeze cards instantly, manage recurring bills, and track real-time spending analytics.</p>
+            </div>
+          </div>
+          <div class="service-row">
+            <div class="card-icon" style="margin-bottom: 0; flex-shrink: 0;" aria-hidden="true">⚡</div>
+            <div>
+              <h4>Instant Domestic &amp; Global Transfers</h4>
+              <p>Send peer-to-peer payments in seconds and schedule low-cost international wires with transparent FX rates.</p>
+            </div>
+          </div>
+          <div class="service-row">
+            <div class="card-icon" style="margin-bottom: 0; flex-shrink: 0;" aria-hidden="true">🛡️</div>
+            <div>
+              <h4>Biometric &amp; AI Fraud Protection</h4>
+              <p>Real-time anomaly detection, two-factor authentication, and zero-liability protection on unauthorized transactions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="margin-bottom: 16px; color: var(--navy-900);">Member Benefits</h3>
+          <div class="service-row">
+            <div class="card-icon" style="margin-bottom: 0; flex-shrink: 0;" aria-hidden="true">💸</div>
+            <div>
+              <h4>Early Direct Deposit</h4>
+              <p>Access eligible paychecks up to two business days ahead of standard clearing schedules automatically.</p>
+            </div>
+          </div>
+          <div class="service-row">
+            <div class="card-icon" style="margin-bottom: 0; flex-shrink: 0;" aria-hidden="true">🌍</div>
+            <div>
+              <h4>Travel-Ready Perks</h4>
+              <p>Zero foreign transaction fees on Premier cards and instant virtual cards for secure online and travel bookings.</p>
+            </div>
+          </div>
+          <div class="service-row">
+            <div class="card-icon" style="margin-bottom: 0; flex-shrink: 0;" aria-hidden="true">🤝</div>
+            <div>
+              <h4>Complimentary Financial Coaching</h4>
+              <p>Schedule annual portfolio checkups, credit-score reviews, and retirement planning sessions at no extra cost.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Account Comparison Table -->
+  <section id="compare" class="alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Side-by-Side Overview</span>
+        <h2>Account Comparison Table</h2>
+        <p>Evaluate rates, minimums, fees, and included perks across our core deposit accounts.</p>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Everyday Checking</th>
+              <th>High-Yield Savings</th>
+              <th>Premier Wealth Account</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Annual Percentage Yield (APY)</td>
+              <td>0.50% APY</td>
+              <td><strong>4.75% APY</strong></td>
+              <td><strong>5.10% APY</strong></td>
+            </tr>
+            <tr>
+              <td>Monthly Maintenance Fee</td>
+              <td>$0</td>
+              <td>$0</td>
+              <td>$0 (with $25k balance)</td>
+            </tr>
+            <tr>
+              <td>Minimum Opening Deposit</td>
+              <td>$100</td>
+              <td>$250</td>
+              <td>$25,000</td>
+            </tr>
+            <tr>
+              <td>ATM Fee Rebates</td>
+              <td>Up to $15 / month</td>
+              <td>N/A</td>
+              <td>Unlimited Worldwide</td>
+            </tr>
+            <tr>
+              <td>Overdraft Protection</td>
+              <td><span class="pill-yes">Included</span></td>
+              <td>Auto-Link Eligible</td>
+              <td><span class="pill-yes">Priority Included</span></td>
+            </tr>
+            <tr>
+              <td>Dedicated Financial Advisor</td>
+              <td>On-Demand Chat</td>
+              <td>Annual Review</td>
+              <td><span class="pill-yes">1-on-1 Dedicated</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiry / Registration Form -->
+  <section id="enquiry">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-kicker">Online Registration &amp; Enquiry</span>
+        <h2>Start Your Application or Request a Consultation</h2>
+        <p>Complete the form below. All required fields are validated in real time to ensure accurate processing.</p>
+      </div>
+
+      <div class="form-container">
+        <!-- Error Summary Banner -->
+        <div id="formErrorBanner" class="status-banner error-banner" role="alert" aria-live="assertive">
+          <h4>Please review your details</h4>
+          <p id="formErrorText">Some fields contain invalid or missing information. Please correct the highlighted fields below.</p>
+        </div>
+
+        <!-- Success Banner -->
+        <div id="formSuccessBanner" class="status-banner success-banner" role="status" aria-live="polite">
+          <h4>Application &amp; Enquiry Submitted Successfully!</h4>
+          <p id="formSuccessText"></p>
+          <div id="formSuccessSummary" class="summary-details"></div>
+        </div>
+
+        <form id="bankingForm" novalidate>
+          <!-- Fieldset 1: Personal Information -->
+          <fieldset>
+            <legend>1. Applicant Personal Information</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="fullName">Full Legal Name <span class="req-star">*</span></label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  required
+                  minlength="3"
+                  maxlength="60"
+                  pattern="^[A-Za-z][A-Za-z\s'\-]{2,59}$"
+                  placeholder="e.g., Elena Vance"
+                  autocomplete="name"
+                />
+                <span class="field-hint">Letters, spaces, hyphens, or apostrophes (3–60 characters).</span>
+                <span class="error-message" id="fullNameError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address <span class="req-star">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  maxlength="100"
+                  placeholder="e.g., elena.vance@example.com"
+                  autocomplete="email"
+                />
+                <span class="field-hint">We will send your confirmation and reference number here.</span>
+                <span class="error-message" id="emailError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Mobile / Contact Number <span class="req-star">*</span></label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  minlength="10"
+                  maxlength="15"
+                  pattern="^\+?[0-9\s\-]{10,15}$"
+                  placeholder="e.g., +1 555-234-5678"
+                  autocomplete="tel"
+                />
+                <span class="field-hint">10 to 15 characters (digits, spaces, hyphens, optional +).</span>
+                <span class="error-message" id="phoneError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="dob">Date of Birth <span class="req-star">*</span></label>
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  required
+                  min="1925-01-01"
+                  max="2008-12-31"
+                />
+                <span class="field-hint">Applicants must be at least 18 years of age.</span>
+                <span class="error-message" id="dobError"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Fieldset 2: Financial Service Details -->
+          <fieldset>
+            <legend>2. Financial Service &amp; Product Details</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="serviceType">Preferred Banking Service <span class="req-star">*</span></label>
+                <select id="serviceType" name="serviceType" required>
+                  <option value="">-- Select a financial service --</option>
+                  <option value="Everyday Checking">Everyday Checking (0.50% APY)</option>
+                  <option value="High-Yield Savings">High-Yield Savings (4.75% APY)</option>
+                  <option value="Premier Wealth Account">Premier Wealth Account ($25,000 min)</option>
+                  <option value="Home Mortgage">Home Mortgage ($50,000 min)</option>
+                  <option value="Auto Financing">Auto Financing</option>
+                  <option value="Personal Loan">Personal &amp; Small Business Loan</option>
+                  <option value="Digital Banking Enquiry">Digital Banking &amp; General Enquiry</option>
+                </select>
+                <span class="error-message" id="serviceTypeError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="annualIncome">Annual Gross Income (USD) <span class="req-star">*</span></label>
+                <input
+                  type="number"
+                  id="annualIncome"
+                  name="annualIncome"
+                  required
+                  min="10000"
+                  max="10000000"
+                  step="500"
+                  placeholder="e.g., 75000"
+                />
+                <span class="field-hint">Enter a value between $10,000 and $10,000,000.</span>
+                <span class="error-message" id="annualIncomeError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="amount">Initial Deposit / Loan Amount (USD) <span class="req-star">*</span></label>
+                <input
+                  type="number"
+                  id="amount"
+                  name="amount"
+                  required
+                  min="100"
+                  max="2000000"
+                  step="50"
+                  placeholder="e.g., 5000"
+                />
+                <span class="field-hint" id="amountHint">Min $100 ($25,000 for Premier Wealth; $50,000 for Home Mortgage).</span>
+                <span class="error-message" id="amountError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="promoCode">Referral / Promo Code (Optional)</label>
+                <input
+                  type="text"
+                  id="promoCode"
+                  name="promoCode"
+                  minlength="6"
+                  maxlength="12"
+                  pattern="^[A-Z0-9]{6,12}$"
+                  placeholder="e.g., MERID2026"
+                />
+                <span class="field-hint">6–12 uppercase letters and numbers only.</span>
+                <span class="error-message" id="promoCodeError"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Fieldset 3: Enquiry Notes & Consent -->
+          <fieldset>
+            <legend>3. Additional Enquiry &amp; Authorization</legend>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="notes">Financial Goals or Specific Questions <span class="req-star">*</span></label>
+                <textarea
+                  id="notes"
+                  name="notes"
+                  required
+                  minlength="15"
+                  maxlength="500"
+                  placeholder="Tell us about your preferred account features, loan timeline, or questions for our advisors..."
+                ></textarea>
+                <span class="field-hint">Minimum 15 characters, maximum 500 characters.</span>
+                <span class="error-message" id="notesError"></span>
+              </div>
+
+              <div class="form-group full-width">
+                <label class="checkbox-label" for="consent">
+                  <input type="checkbox" id="consent" name="consent" required />
+                  <span>
+                    I confirm that the information provided is accurate and I authorize Meridian Trust Bank to contact me regarding this financial service enquiry. <span class="req-star">*</span>
+                  </span>
+                </label>
+                <span class="error-message" id="consentError"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit Registration</button>
+            <button type="reset" class="btn btn-secondary">Clear Form</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>Meridian Trust Bank</strong> • Practicum 11 Financial Services Webpage
+      </div>
+      <div>
+        Member FDIC • Equal Housing Lender • Demonstration Portal
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const form = document.getElementById('bankingForm');
+      const errorBanner = document.getElementById('formErrorBanner');
+      const errorBannerText = document.getElementById('formErrorText');
+      const successBanner = document.getElementById('formSuccessBanner');
+      const successText = document.getElementById('formSuccessText');
+      const successSummary = document.getElementById('formSuccessSummary');
+
+      const fields = {
+        fullName: document.getElementById('fullName'),
+        email: document.getElementById('email'),
+        phone: document.getElementById('phone'),
+        dob: document.getElementById('dob'),
+        serviceType: document.getElementById('serviceType'),
+        annualIncome: document.getElementById('annualIncome'),
+        amount: document.getElementById('amount'),
+        promoCode: document.getElementById('promoCode'),
+        notes: document.getElementById('notes'),
+        consent: document.getElementById('consent')
+      };
+
+      // Calculate exact age from date of birth
+      function isAtLeast18(dateStr) {
+        if (!dateStr) return false;
+        const dob = new Date(dateStr + 'T00:00:00');
+        const today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        const m = today.getMonth() - dob.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+          age--;
+        }
+        return age >= 18;
+      }
+
+      // Apply industry-specific custom validation rules using setCustomValidity()
+      function applyCustomValidation(field) {
+        field.setCustomValidity('');
+
+        if (field === fields.fullName && field.validity.patternMismatch) {
+          field.setCustomValidity('Please enter a valid full name using letters, spaces, hyphens, or apostrophes.');
+        }
+
+        if (field === fields.phone && field.validity.patternMismatch) {
+          field.setCustomValidity('Enter a valid phone number (10–15 digits, spaces, hyphens, or leading +).');
+        }
+
+        if (field === fields.dob && field.value) {
+          if (!isAtLeast18(field.value)) {
+            field.setCustomValidity('You must be at least 18 years old to register for banking services.');
+          }
+        }
+
+        if (field === fields.amount || field === fields.serviceType) {
+          const service = fields.serviceType.value;
+          const amt = Number(fields.amount.value);
+          fields.amount.setCustomValidity('');
+
+          if (fields.amount.value !== '' && !Number.isNaN(amt)) {
+            if (service === 'Premier Wealth Account' && amt < 25000) {
+              fields.amount.setCustomValidity('Premier Wealth Account requires a minimum initial deposit of $25,000.');
+            } else if (service === 'Home Mortgage' && amt < 50000) {
+              fields.amount.setCustomValidity('Home Mortgage requests require a minimum loan amount of $50,000.');
+            } else if (service === 'High-Yield Savings' && amt < 250) {
+              fields.amount.setCustomValidity('High-Yield Savings requires a minimum opening deposit of $250.');
+            }
+          }
+        }
+
+        if (field === fields.promoCode && field.value.trim() !== '') {
+          field.value = field.value.toUpperCase().trim();
+          if (field.validity.patternMismatch || field.validity.tooShort) {
+            field.setCustomValidity('Promo code must be 6–12 uppercase letters and numbers (e.g., MERID2026).');
+          }
+        }
+
+        if (field === fields.consent && !field.checked) {
+          field.setCustomValidity('You must confirm and authorize this enquiry before submitting.');
+        }
+      }
+
+      // Render or clear the inline error message for a specific field
+      function updateFieldError(field) {
+        applyCustomValidation(field);
+        const errorEl = document.getElementById(field.id + 'Error');
+        if (!errorEl) return;
+
+        if (!field.checkValidity()) {
+          errorEl.textContent = field.validationMessage;
+          errorEl.classList.add('visible');
+        } else {
+          errorEl.textContent = '';
+          errorEl.classList.remove('visible');
+        }
+      }
+
+      // Attach real-time validation listeners via addEventListener()
+      Object.values(fields).forEach((field) => {
+        const eventName = field.type === 'checkbox' || field.tagName === 'SELECT' ? 'change' : 'input';
+
+        field.addEventListener('blur', function () {
+          field.classList.add('touched');
+          updateFieldError(field);
+        });
+
+        field.addEventListener(eventName, function () {
+          if (field.classList.contains('touched') || form.classList.contains('form-touched')) {
+            updateFieldError(field);
+          }
+          // Re-check amount constraint whenever service type changes
+          if (field === fields.serviceType && (fields.amount.classList.contains('touched') || form.classList.contains('form-touched'))) {
+            updateFieldError(fields.amount);
+          }
+        });
+      });
+
+      // Handle form submission
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        form.classList.add('form-touched');
+
+        // Run custom validations and inline error updates on all fields
+        Object.values(fields).forEach((field) => {
+          field.classList.add('touched');
+          updateFieldError(field);
+        });
+
+        // Validate using standard Constraint Validation API: checkValidity() & reportValidity()
+        if (!form.checkValidity()) {
+          successBanner.classList.remove('visible');
+          errorBanner.classList.add('visible');
+          errorBannerText.textContent = 'Please correct the highlighted fields below before submitting your registration.';
+          form.reportValidity();
+          return;
+        }
+
+        // Form is valid — hide errors and display success banner
+        errorBanner.classList.remove('visible');
+
+        const refNumber = 'MTB-' + Math.floor(100000 + Math.random() * 900000);
+        const formattedAmount = Number(fields.amount.value).toLocaleString('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          maximumFractionDigits: 0
+        });
+
+        successText.textContent = `Thank you, ${fields.fullName.value.trim()}. Your enquiry for ${fields.serviceType.value} has been received. A specialist will reach out to ${fields.email.value.trim()} within 1 business day.`;
+        successSummary.innerHTML = `
+          <div><strong>Reference ID:</strong> ${refNumber}</div>
+          <div><strong>Service:</strong> ${fields.serviceType.value}</div>
+          <div><strong>Amount:</strong> ${formattedAmount}</div>
+          <div><strong>Contact:</strong> ${fields.phone.value.trim()}</div>
+        `;
+        successBanner.classList.add('visible');
+        successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        // Reset form state cleanly after successful submission
+        form.reset();
+        form.classList.remove('form-touched');
+        Object.values(fields).forEach((field) => {
+          field.classList.remove('touched');
+          field.setCustomValidity('');
+          const errorEl = document.getElementById(field.id + 'Error');
+          if (errorEl) {
+            errorEl.textContent = '';
+            errorEl.classList.remove('visible');
+          }
+        });
+      });
+
+      // Handle form reset button
+      form.addEventListener('reset', function () {
+        form.classList.remove('form-touched');
+        errorBanner.classList.remove('visible');
+        successBanner.classList.remove('visible');
+        Object.values(fields).forEach((field) => {
+          field.classList.remove('touched');
+          field.setCustomValidity('');
+          const errorEl = document.getElementById(field.id + 'Error');
+          if (errorEl) {
+            errorEl.textContent = '';
+            errorEl.classList.remove('visible');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
